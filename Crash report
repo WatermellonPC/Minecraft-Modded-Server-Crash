@@ -1,0 +1,230 @@
+ARNING: coremods are present:
+  TransformLoader (DynamicSurroundings-1.12.2-3.6.1.0.jar)
+  LoadingPlugin (RandomThings-MC1.12.2-4.2.7.4.jar)
+  IELoadingPlugin (ImmersiveEngineering-core-0.12-98.jar)
+  ForgelinPlugin (Forgelin-1.8.4.jar)
+  MekanismCoremod (Mekanism-1.12.2-9.8.3.390.jar)
+  SCFMLCorePlugin (StalkerCreepers-1.12.1.jar)
+  OpenModsCorePlugin (OpenModsLib-1.12.2-0.12.2.jar)
+  AppleCore (AppleCore-mc1.12.2-3.4.0.jar)
+  iceandfire (iceandfire-1.9.1-1.12.2.jar)
+  CTMCorePlugin (CTM-MC1.12.2-1.0.2.31.jar)
+  LogisticsPipesCoreLoader (logisticspipes-0.10.3.40.jar)
+  llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  EnderCorePlugin (EnderCore-1.12.2-0.5.76-core.jar)
+  LevelUpCore (levelup2-1.5.8.jar)
+  IvToolkit (IvToolkit-1.3.3-1.12.jar)
+Contact their authors BEFORE contacting forge
+
+// Why is it breaking :(
+
+Time: 08/02/21 20:23
+Description: Exception in server tick loop
+
+net.minecraftforge.fml.common.LoaderException: java.lang.NoClassDefFoundError: net/minecraft/client/renderer/tileentity/TileEntitySpecialRenderer
+	at net.minecraftforge.fml.common.AutomaticEventSubscriber.inject(AutomaticEventSubscriber.java:89)
+	at net.minecraftforge.fml.common.FMLModContainer.constructMod(FMLModContainer.java:612)
+	at sun.reflect.GeneratedMethodAccessor10.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.sendEventToModContainer(LoadController.java:219)
+	at net.minecraftforge.fml.common.LoadController.propogateStateMessage(LoadController.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.distributeStateMessage(LoadController.java:136)
+	at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:595)
+	at net.minecraftforge.fml.server.FMLServerHandler.beginServerLoading(FMLServerHandler.java:98)
+	at net.minecraftforge.fml.common.FMLCommonHandler.onServerStart(FMLCommonHandler.java:333)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(DedicatedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NoClassDefFoundError: net/minecraft/client/renderer/tileentity/TileEntitySpecialRenderer
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Unknown Source)
+	at java.lang.Class.privateGetPublicMethods(Unknown Source)
+	at java.lang.Class.getMethods(Unknown Source)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.register(EventBus.java:82)
+	at net.minecraftforge.fml.common.AutomaticEventSubscriber.inject(AutomaticEventSubscriber.java:82)
+	... 31 more
+Caused by: java.lang.ClassNotFoundException: net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 37 more
+Caused by: net.minecraftforge.fml.common.asm.ASMTransformerWrapper$TransformerException: Exception in class transformer net.minecraftforge.fml.common.asm.transformers.SideTransformer@2679311f from coremod FMLCorePlugin
+	at net.minecraftforge.fml.common.asm.ASMTransformerWrapper$TransformerWrapper.transform(ASMTransformerWrapper.java:260)
+	at net.minecraft.launchwrapper.LaunchClassLoader.runTransformers(LaunchClassLoader.java:279)
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:176)
+	... 39 more
+Caused by: java.lang.RuntimeException: Attempted to load class bwy for invalid side SERVER
+	at net.minecraftforge.fml.common.asm.transformers.SideTransformer.transform(SideTransformer.java:62)
+	at net.minecraftforge.fml.common.asm.ASMTransformerWrapper$TransformerWrapper.transform(ASMTransformerWrapper.java:256)
+	... 41 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_171, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 12506980112 bytes (11927 MB) / 16464216064 bytes (15701 MB) up to 16464216064 bytes (15701 MB)
+	JVM Flags: 2 total; -Xmx16384M -Xms16384M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2855 94 mods loaded, 94 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State | ID                                | Version                  | Source                                             | Signature                                |
+	|:----- |:--------------------------------- |:------------------------ |:-------------------------------------------------- |:---------------------------------------- |
+	| LC    | minecraft                         | 1.12.2                   | minecraft.jar                                      | None                                     |
+	| LC    | mcp                               | 9.42                     | minecraft.jar                                      | None                                     |
+	| LC    | FML                               | 8.0.99.99                | server.jar                                         | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LC    | forge                             | 14.23.5.2855             | server.jar                                         | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LC    | ivtoolkit                         | 1.3.3-1.12               | minecraft.jar                                      | None                                     |
+	| LC    | openmodscore                      | 0.12.2                   | minecraft.jar                                      | None                                     |
+	| LC    | abyssalcraft                      | 1.10.3                   | AbyssalCraft-1.12.2-1.10.3.jar                     | 220f10d3a93b3ff5fbaa7434cc629d863d6751b9 |
+	| LC    | actuallyadditions                 | 1.12.2-r152              | ActuallyAdditions-1.12.2-r152.jar                  | None                                     |
+	| LC    | aiimprovements                    | 0.0.1.3                  | AIImprovements-1.12-0.0.1b3.jar                    | None                                     |
+	| LC    | animalium                         | 0.3.8                    | Animalium-0.3.8.jar                                | None                                     |
+	| LC    | craftstudioapi                    | 1.0.0                    | CraftStudioAPI-universal-1.0.1.95-mc1.12-alpha.jar | None                                     |
+	| LC    | harvestcraft                      | 1.12.2zb                 | Pam_s HarvestCraft 1.12.2zg.jar                    | None                                     |
+	| LC    | twilightforest                    | 3.11.1021                | twilightforest-1.12.2-3.11.1021-universal.jar      | None                                     |
+	| LC    | animania                          | 2.0.2.26                 | animania-1.12.2-base-2.0.2.26.jar                  | None                                     |
+	| LC    | applecore                         | 3.4.0                    | AppleCore-mc1.12.2-3.4.0.jar                       | None                                     |
+	| LC    | appliedenergistics2               | rv6-stable-7             | appliedenergistics2-rv6-stable-7.jar               | dfa4d3ac143316c6f32aa1a1beda1e34d42132e5 |
+	| LC    | aquaculture                       | 1.6.8                    | Aquaculture-1.12.2-1.6.8.jar                       | None                                     |
+	| LC    | badwithernocookiereloaded         | 1.12.2-3.4.18            | badwithernocookiereloaded-1.12.2-3.4.18.jar        | None                                     |
+	| LC    | baubles                           | 1.5.2                    | Baubles-1.12-1.5.2.jar                             | None                                     |
+	| LC    | bettercaves                       | 1.12.2                   | bettercaves-1.12.2-2.0.4.jar                       | None                                     |
+	| LC    | bookshelf                         | 2.3.590                  | Bookshelf-1.12.2-2.3.590.jar                       | d476d1b22b218a10d845928d1665d45fce301b27 |
+	| LC    | mysticalworld                     | 1.12.2-1.9.2             | mysticalworld-1.12.2-1.9.2.jar                     | None                                     |
+	| LC    | chisel                            | MC1.12.2-1.0.2.45        | Chisel-MC1.12.2-1.0.2.45.jar                       | None                                     |
+	| LC    | clumps                            | 3.1.2                    | Clumps-3.1.2.jar                                   | None                                     |
+	| LC    | codechickenlib                    | 3.2.3.358                | CodeChickenLib-1.12.2-3.2.3.358-universal.jar      | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LC    | mantle                            | 1.12-1.3.3.55            | Mantle-1.12-1.3.3.55.jar                           | None                                     |
+	| LC    | endercore                         | 1.12.2-0.5.76            | EnderCore-1.12.2-0.5.76.jar                        | None                                     |
+	| LC    | enderio                           | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| LC    | enderiointegrationtic             | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| LC    | tconstruct                        | 1.12.2-2.13.0.183        | TConstruct-1.12.2-2.13.0.183.jar                   | None                                     |
+	| LC    | conarm                            | 1.2.5.10                 | conarm-1.12.2-1.2.5.10.jar                         | b33d2c8df492beff56d1bbbc92da49b8ab7345a1 |
+	| LC    | cyclicmagic                       | 1.20.8                   | Cyclic-1.12.2-1.20.8.jar                           | 0e5cb559be7d03f3fc18b8cba547d663e25f28af |
+	| LC    | projecte                          | 1.12.2-PE1.4.1           | ProjectE-1.12.2-PE1.4.1.jar                        | None                                     |
+	| LC    | p455w0rdslib                      | 2.3.161                  | p455w0rdslib-1.12.2-2.3.161.jar                    | 186bc454cd122c9c2f1aa4f95611254bcc543363 |
+	| LC    | stg                               | 1.12.2-1.2.2             | stg-1.12.2-1.2.2.jar                               | None                                     |
+	| LC    | danknull                          | 1.7.91                   | DankNull-1.12.2-1.7.91.jar                         | 644f38521a349310a5dae0239577dc7beebefaec |
+	| LC    | defiledlands                      | 1.4.3                    | defiledlands-1.12.2-1.4.3.jar                      | None                                     |
+	| LE    | doubleslabs                       | 0.11.0                   | DoubleSlabs-1.12-0.11.0.jar                        | None                                     |
+	| L     | orelib                            | 3.6.0.1                  | OreLib-1.12.2-3.6.0.1.jar                          | None                                     |
+	| L     | dsurround                         | 3.6.1.0                  | DynamicSurroundings-1.12.2-3.6.1.0.jar             | None                                     |
+	| L     | eggs                              | 1.0                      | EM3R50N-EatTheEggs-1.12.2-14.23.4.2760.jar         | None                                     |
+	| L     | enderiobase                       | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| L     | enderioconduits                   | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| L     | enderioconduitsappliedenergistics | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| L     | enderioconduitsopencomputers      | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| L     | enderioconduitsrefinedstorage     | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| L     | enderiointegrationforestry        | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| L     | enderiointegrationticlate         | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| L     | enderioinvpanel                   | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| L     | enderiomachines                   | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| L     | enderiopowertools                 | 5.2.66                   | EnderIO-1.12.2-5.2.66.jar                          | None                                     |
+	| L     | enderstorage                      | 2.4.6.137                | EnderStorage-1.12.2-2.4.6.137-universal.jar        | None                                     |
+	| L     | fastleafdecay                     | v14                      | FastLeafDecay-v14.jar                              | None                                     |
+	| L     | forgelin                          | 1.8.4                    | Forgelin-1.8.4.jar                                 | None                                     |
+	| L     | gravestone                        | 1.10.3                   | gravestone-1.10.3.jar                              | None                                     |
+	| L     | llibrary                          | 1.7.20                   | llibrary-1.7.20-1.12.2.jar                         | None                                     |
+	| L     | iceandfire                        | 1.9.1                    | iceandfire-1.9.1-1.12.2.jar                        | None                                     |
+	| L     | ic2                               | 2.8.170-ex112            | industrialcraft-2-2.8.170-ex112.jar                | None                                     |
+	| L     | ironchest                         | 1.12.2-7.0.67.844        | ironchest-1.12.2-7.0.72.847.jar                    | None                                     |
+	| L     | kleeslabs                         | 5.4.12                   | KleeSlabs_1.12.2-5.4.12.jar                        | None                                     |
+	| L     | lenientcreepers                   | v1.0                     | lenientcreepers-1.12.x-v1.0.jar                    | None                                     |
+	| L     | levelup2                          | ${version}               | levelup2-1.5.8.jar                                 | None                                     |
+	| L     | logisticspipes                    | 0.10.3.40                | logisticspipes-0.10.3.40.jar                       | None                                     |
+	| L     | lootbags                          | 2.5.8.5                  | LootBags-1.12.2-2.5.8.5.jar                        | None                                     |
+	| L     | mcjtylib_ng                       | 3.5.4                    | mcjtylib-1.12-3.5.4.jar                            | None                                     |
+	| L     | mekanism                          | 1.12.2-9.8.3.390         | Mekanism-1.12.2-9.8.3.390.jar                      | None                                     |
+	| L     | morpheus                          | 1.12.2-3.5.106           | Morpheus-1.12.2-3.5.106.jar                        | None                                     |
+	| L     | naturescompass                    | 1.8.5                    | NaturesCompass-1.12.2-1.8.5.jar                    | None                                     |
+	| L     | samsocean                         | 1.0.2                    | OceanFloor-1.12.2-1.0.2.jar                        | None                                     |
+	| L     | oreexcavation                     | 1.4.150                  | OreExcavation-1.4.150.jar                          | None                                     |
+	| L     | oeintegration                     | 2.3.4                    | oeintegration-2.3.4.jar                            | None                                     |
+	| L     | openmods                          | 0.12.2                   | OpenModsLib-1.12.2-0.12.2.jar                      | None                                     |
+	| L     | openblocks                        | 1.8.1                    | OpenBlocks-1.12.2-1.8.1.jar                        | None                                     |
+	| L     | patchouli                         | 1.0-23.6                 | Patchouli-1.0-23.6.jar                             | None                                     |
+	| L     | randomthings                      | 4.2.7.4                  | RandomThings-MC1.12.2-4.2.7.4.jar                  | None                                     |
+	| L     | reccomplex                        | 1.4.8.2                  | RecurrentComplex-1.4.8.2.jar                       | None                                     |
+	| L     | rftools                           | 7.73                     | rftools-1.12-7.73.jar                              | None                                     |
+	| L     | rftoolsdim                        | 5.71                     | rftoolsdim-1.12-5.71.jar                           | None                                     |
+	| L     | immersiveengineering              | 0.12-98                  | ImmersiveEngineering-0.12-98.jar                   | None                                     |
+	| L     | simplyjetpacks                    | 1.12.2-2.2.18.1          | SimplyJetpacks2-1.12.2-2.2.18.1.jar                | None                                     |
+	| L     | slabstoplanks                     | 1.0.0                    | Slabs To Planks 1.12.2 Version 1.0.jar             | None                                     |
+	| L     | spiceoflife                       | 1.3.12                   | SpiceOfLife-mc1.12-1.3.12.jar                      | None                                     |
+	| L     | lemonlib                          | 1.3.0                    | lemonlib-1.12.2-1.3.0.jar                          | None                                     |
+	| L     | statues                           | 1.0.1                    | statues-rechiseled-1.12.2-1.0.1.jar                | None                                     |
+	| L     | tcomplement                       | 1.12.2-0.4.3             | TinkersComplement-1.12.2-0.4.3.jar                 | None                                     |
+	| L     | tinkertoolleveling                | 1.12.2-1.1.0.DEV.b23e769 | TinkerToolLeveling-1.12.2-1.1.0.jar                | None                                     |
+	| L     | torchmaster                       | 1.8.4.84                 | torchmaster_1.12.2-1.8.4.84.jar                    | None                                     |
+	| L     | traverse                          | 1.6.0                    | Traverse-1.12.2-1.6.0-69.jar                       | None                                     |
+	| L     | villagermarket                    | 1.0.2                    | villager-market-1.12.2-1.0.2.jar                   | None                                     |
+	| L     | waystones                         | 4.1.0                    | Waystones_1.12.2-4.1.0.jar                         | None                                     |
+	| L     | betteranimalsplus                 | 9.0.1                    | betteranimalsplus-1.12.2-9.0.1.jar                 | None                                     |
+	| L     | densemetals                       | 2.0.0                    | DenseMetals-1.12.2-2.0.0.30.jar                    | None                                     |
+	| L     | solcarrot                         | 1.8.2                    | solcarrot-1.12.2-1.8.2.jar                         | None                                     |
+	| L     | mysticallib                       | 1.12.2-1.9.0             | mysticallib-1.12.2-1.9.0.jar                       | None                                     |
+
+	Loaded coremods (and transformers): 
+TransformLoader (DynamicSurroundings-1.12.2-3.6.1.0.jar)
+  
+LoadingPlugin (RandomThings-MC1.12.2-4.2.7.4.jar)
+  lumien.randomthings.asm.ClassTransformer
+IELoadingPlugin (ImmersiveEngineering-core-0.12-98.jar)
+  blusunrize.immersiveengineering.common.asm.IEClassTransformer
+ForgelinPlugin (Forgelin-1.8.4.jar)
+  
+MekanismCoremod (Mekanism-1.12.2-9.8.3.390.jar)
+  mekanism.coremod.KeybindingMigrationHelper
+SCFMLCorePlugin (StalkerCreepers-1.12.1.jar)
+  atomicstryker.stalkercreepers.common.SCTransformer
+OpenModsCorePlugin (OpenModsLib-1.12.2-0.12.2.jar)
+  openmods.core.OpenModsClassTransformer
+AppleCore (AppleCore-mc1.12.2-3.4.0.jar)
+  squeek.applecore.asm.TransformerModuleHandler
+iceandfire (iceandfire-1.9.1-1.12.2.jar)
+  com.github.alexthe666.iceandfire.patcher.IceAndFireRuntimePatcher
+CTMCorePlugin (CTM-MC1.12.2-1.0.2.31.jar)
+  team.chisel.ctm.client.asm.CTMTransformer
+LogisticsPipesCoreLoader (logisticspipes-0.10.3.40.jar)
+  logisticspipes.asm.LogisticsClassTransformer
+llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  net.ilexiconn.llibrary.server.core.plugin.LLibraryTransformer
+  net.ilexiconn.llibrary.server.core.patcher.LLibraryRuntimePatcher
+EnderCorePlugin (EnderCore-1.12.2-0.5.76-core.jar)
+  com.enderio.core.common.transform.EnderCoreTransformer
+  com.enderio.core.common.transform.SimpleMixinPatcher
+LevelUpCore (levelup2-1.5.8.jar)
+  
+IvToolkit (IvToolkit-1.3.3-1.12.jar)
+  
+	OpenModsLib class transformers: [llama_null_fix:FINISHED],[horse_base_null_fix:FINISHED],[pre_world_render_hook:ENABLED],[player_render_hook:ENABLED],[horse_null_fix:FINISHED]
+	AE2 Version: stable rv6-stable-7 for Forge 14.23.5.2768
+	Ender IO: Found the following problem(s) with your installation (That does NOT mean that Ender IO caused the crash or was involved in it in any way. We add this information to help finding common problems, not as an invitation to post any crash you encounter to Ender IO's issue tracker. Always check the stack trace above to see which mod is most likely failing.):
+                  * Offline mode for dedicated servers is NOT supported by Ender IO.
+                 This may (look up the meaning of 'may' in the dictionary if you're not sure what it means) have caused the error. Try reproducing the crash WITHOUT this/these mod(s) before reporting it.
